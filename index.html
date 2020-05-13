@@ -61,7 +61,30 @@
             </section>
 
         </div>
+<script>
+    // wisselt kleur van button bij het klikken
+    function change_button_color(class_name, bg_color, text_color) {
+            $("#" + class_name).css({
+                "background-color": bg_color,
+                "color": text_color,
+            });
+        }
 
+    //toont alle elements
+    function show_all() {
+            //reset alle kleuren op category buttons
+            change_button_color("volwassenen", "white", "black");
+            change_button_color("familie", "white", "black");
+            main_cat = "";
+            //reset alle kleuren op genre buttons
+            var arr_length = classes_arr.length;
+            for (var i = 0; i < arr_length; i++) {
+                change_button_color(classes_arr[i], "white", "black");
+            }
+            classes_arr = Array();
+            $(".my_cards").show();
+    }
+</script>
 </body>
 
 </html>
