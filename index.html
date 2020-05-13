@@ -3,16 +3,64 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-<div id="wrapping-content">
+    <div id="wrapping-content" style="width: 80%; margin: auto;">
 
-    <h1>Werkstuk</h1>
-    <div class="events"> </div>
-</div>
+        <h1 id="RecepTayyipYildirimer">Recep Tayyip Yildirimer</h1>
+        
+        <div class="wrapping-content">
+            <h1 class="title">Podium aan Huis</h1>
+            <div class="filters">
+                <h2>Doelgroep</h2>
+                <button onclick="show_all()">
+                    Clear Filters
+                </button>
+                <button id="volwassenen" onclick="main_category(this.id)">
+                    volwassenen
+                </button>
+                <button id="familie" onclick="main_category(this.id)">
+                    familie
+                </button>
+                <h2>Genre</h2>
+                <button id="theater" onclick="my_filter(this.id)">
+                    theater
+                </button>
+                <button id="concert" onclick="my_filter(this.id)">
+                    concert
+                </button>
+                <button id="multidisciplinair" onclick="my_filter(this.id)">
+                    multidisciplinair
+                </button>
+                <button id="literatuur" onclick="my_filter(this.id)">
+                    literatuur
+                </button>
+                <button id="comedy" onclick="my_filter(this.id)">
+                    comedy
+                </button>
+                <button id="dans" onclick="my_filter(this.id)">
+                    dans
+                </button>
+                <button id="muziektheater" onclick="my_filter(this.id)">
+                    muziektheater
+                </button>
+                <button id="figurentheater" onclick="my_filter(this.id)">
+                    figurentheater
+                </button>
+                <button id="circus" onclick="my_filter(this.id)">
+                    circus
+                </button>
+                <button id="opera" onclick="my_filter(this.id)">
+                    opera
+                </button>
+            </div>
+            <section class="events">
+            </section>
+
+        </div>
 
 </body>
 
