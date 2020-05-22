@@ -11,7 +11,7 @@
     <div id="wrapping-content" style="width: 80%; margin: auto;">
 
         <h1 id="RecepTayyipYildirimer">Recep Tayyip Yildirimer</h1>
-        
+
         <div class="wrapping-content">
             <h1 class="title">Podium aan Huis</h1>
             <div class="filters">
@@ -61,30 +61,66 @@
             </section>
 
         </div>
-<script>
-    // wisselt kleur van button bij het klikken
-    function change_button_color(class_name, bg_color, text_color) {
-            $("#" + class_name).css({
-                "background-color": bg_color,
-                "color": text_color,
-            });
-        }
+        <script>
+            var main_cat = "";
 
-    //toont alle elements
-    function show_all() {
-            //reset alle kleuren op category buttons
-            change_button_color("volwassenen", "white", "black");
-            change_button_color("familie", "white", "black");
-            main_cat = "";
-            //reset alle kleuren op genre buttons
-            var arr_length = classes_arr.length;
-            for (var i = 0; i < arr_length; i++) {
-                change_button_color(classes_arr[i], "white", "black");
+            function main_category(id) {
+                main_cat = id;
+                // controle en toon parent 
+                filter_cards();
+                if (id == "volwassenen") {
+                    change_button_color(id, "blue", "white")
+                    change_button_color("familie", "white", "black");
+                } else {
+                    change_button_color(id, "blue", "white")
+                    change_button_color("volwassenen", "white", "black");
+                }
             }
-            classes_arr = Array();
-            $(".my_cards").show();
-    }
-</script>
+            // deze array houd ids van geklikte item
+            var classes_arr = Array();
+
+            function my_filter(class_name) {
+                // als item niet aanwezig is in array betekent dit voor het eerste keer geklikt is
+                if (include(classes_arr, class_name) == false) {
+                    //pusing id in array
+                    classes_arr.push(class_name);
+                    //wissel kleur van button
+                    change_button_color(class_name, "blue", "white");
+                    // fiter cards
+                    filter_cards();
+                } else {
+                    // betekent element is weer geklikt geweest, verwijder filter
+                    // verwijder id van array
+                    remove_from_array(class_name);
+                    // wissel kleur naar default van button
+                    change_button_color(class_name, "white", "black");
+                    // dit is nu verwijderd en enkel andere array elementen worden gefilterd
+                    filter_cards();
+                }
+            }
+            // wisselt kleur van button bij het klikken
+            function change_button_color(class_name, bg_color, text_color) {
+                $("#" + class_name).css({
+                    "background-color": bg_color,
+                    "color": text_color,
+                });
+            }
+
+            //toont alle elements
+            function show_all() {
+                //reset alle kleuren op category buttons
+                change_button_color("volwassenen", "white", "black");
+                change_button_color("familie", "white", "black");
+                main_cat = "";
+                //reset alle kleuren op genre buttons
+                var arr_length = classes_arr.length;
+                for (var i = 0; i < arr_length; i++) {
+                    change_button_color(classes_arr[i], "white", "black");
+                }
+                classes_arr = Array();
+                $(".my_cards").show();
+            }
+        </script>
 </body>
 
 </html>
