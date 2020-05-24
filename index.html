@@ -108,6 +108,20 @@
                 classes_arr.splice(index, 1);
             }
         }
+        
+      
+
+        function filter_parent_category() {
+            if (main_cat != "") {
+                $('.my_cards').each(function(i, obj) {
+                    if (!$(this).hasClass(main_cat)) {
+                        $(this).css({
+                            "display": "none"
+                        });
+                    }
+                });
+            }
+        }
 
             // wisselt kleur van button bij het klikken
             function change_button_color(class_name, bg_color, text_color) {
