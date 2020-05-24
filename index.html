@@ -98,6 +98,17 @@
                     filter_cards();
                 }
             }
+
+        // deze functie verwijdert het gegeven element van het array
+        function remove_from_array(class_name) {
+            // haal index van element in array
+            const index = classes_arr.indexOf(class_name);
+            // dit betekent dat het element beschikbaar is in het array
+            if (index > -1) {
+                classes_arr.splice(index, 1);
+            }
+        }
+
             // wisselt kleur van button bij het klikken
             function change_button_color(class_name, bg_color, text_color) {
                 $("#" + class_name).css({
