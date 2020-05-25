@@ -69,10 +69,10 @@
                 // controle en toon parent 
                 filter_cards();
                 if (id == "volwassenen") {
-                    change_button_color(id, "blue", "white")
+                    change_button_color(id, "#ff0080", "white")
                     change_button_color("familie", "white", "black");
                 } else {
-                    change_button_color(id, "blue", "white")
+                    change_button_color(id, "#ff0080", "white")
                     change_button_color("volwassenen", "white", "black");
                 }
             }
@@ -85,7 +85,7 @@
                     //pusing id in array
                     classes_arr.push(class_name);
                     //wissel kleur van button
-                    change_button_color(class_name, "blue", "white");
+                    change_button_color(class_name, "#ff0080", "white");
                     // fiter cards
                     filter_cards();
                 } else {
